@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 19:36:48 by abferrer          #+#    #+#             */
-/*   Updated: 2025/07/14 21:08:41 by abferrer         ###   ########.fr       */
+/*   Created: 2025/02/02 18:21:12 by abferrer          #+#    #+#             */
+/*   Updated: 2025/02/02 18:22:05 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-
-    int pipe_fd[2];
-
-    if (argc != 5)
-        ft_error("Invalid arguments number");
-
-    if (pipe(pipe_fd) == -1)
-        ft_error("Error getting pipe");
-    
-    return 0;
+	del(lst->content);
+	free(lst);
 }

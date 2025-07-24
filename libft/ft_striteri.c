@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 19:36:48 by abferrer          #+#    #+#             */
-/*   Updated: 2025/07/14 21:08:41 by abferrer         ###   ########.fr       */
+/*   Created: 2025/01/26 01:40:44 by abferrer          #+#    #+#             */
+/*   Updated: 2025/01/31 16:58:10 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
+	unsigned int	i;
 
-    int pipe_fd[2];
-
-    if (argc != 5)
-        ft_error("Invalid arguments number");
-
-    if (pipe(pipe_fd) == -1)
-        ft_error("Error getting pipe");
-    
-    return 0;
+	i = 0;
+	if (!s || !f)
+		return ;
+	while (s[i])
+	{
+		f(i, s + i);
+		i++;
+	}
 }

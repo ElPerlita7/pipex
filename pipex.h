@@ -6,7 +6,7 @@
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:34:17 by abferrer          #+#    #+#             */
-/*   Updated: 2025/06/27 20:51:05 by abferrer         ###   ########.fr       */
+/*   Updated: 2025/07/14 21:01:20 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <stdio.h>
+
+# include "./libft/libft.h"
 
 void	ft_error(char *msg);
 

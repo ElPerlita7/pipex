@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 19:36:48 by abferrer          #+#    #+#             */
-/*   Updated: 2025/07/14 21:08:41 by abferrer         ###   ########.fr       */
+/*   Created: 2025/02/02 18:16:42 by abferrer          #+#    #+#             */
+/*   Updated: 2025/02/02 18:21:47 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+int	ft_lstsize(t_list *lst)
 {
+	int	count;
 
-    int pipe_fd[2];
-
-    if (argc != 5)
-        ft_error("Invalid arguments number");
-
-    if (pipe(pipe_fd) == -1)
-        ft_error("Error getting pipe");
-    
-    return 0;
+	count = 0;
+	if (!lst)
+		return (0);
+	while (lst->next != NULL)
+	{
+		count++;
+		lst = lst->next;
+	}
+	return (count + 1);
 }

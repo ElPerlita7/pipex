@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 19:36:48 by abferrer          #+#    #+#             */
-/*   Updated: 2025/07/14 21:08:41 by abferrer         ###   ########.fr       */
+/*   Created: 2025/01/29 20:02:49 by abferrer          #+#    #+#             */
+/*   Updated: 2025/01/31 17:03:37 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "libft.h"
 
-int main(int argc, char **argv, char **envp)
+void	*ft_calloc(size_t nitems, size_t size)
 {
+	void	*item;
 
-    int pipe_fd[2];
-
-    if (argc != 5)
-        ft_error("Invalid arguments number");
-
-    if (pipe(pipe_fd) == -1)
-        ft_error("Error getting pipe");
-    
-    return 0;
+	item = malloc(nitems * size);
+	if (!item)
+		return (NULL);
+	ft_memset(item, 0, nitems * size);
+	return (item);
 }

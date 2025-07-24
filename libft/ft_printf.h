@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/26 19:36:48 by abferrer          #+#    #+#             */
-/*   Updated: 2025/07/14 21:08:41 by abferrer         ###   ########.fr       */
+/*   Created: 2025/02/19 16:30:51 by abferrer          #+#    #+#             */
+/*   Updated: 2025/05/01 01:51:18 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
-int main(int argc, char **argv, char **envp)
-{
+# include <stdarg.h>
+# include <unistd.h>
+#include "libft.h"
 
-    int pipe_fd[2];
+int				ft_print_char(char c);
+unsigned long   ft_strlen2(char *str);
+int				ft_print_string(char *str);
+int				ft_print_num(int n);
+int				ft_print_num_base(unsigned long n, char *base);
+int				ft_print_pointer(void *ptr);
+int				ft_printf(char const *format, ...);
 
-    if (argc != 5)
-        ft_error("Invalid arguments number");
-
-    if (pipe(pipe_fd) == -1)
-        ft_error("Error getting pipe");
-    
-    return 0;
-}
+#endif
