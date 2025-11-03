@@ -6,7 +6,7 @@
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/15 18:48:01 by abferrer          #+#    #+#             */
-/*   Updated: 2025/05/26 21:05:40 by abferrer         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:43:14 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stddef.h>
 # include <stdio.h>
 # include <stdlib.h>
-#include <stdarg.h>
+# include <stdarg.h>
 # include <string.h>
 # include <unistd.h>
 # include "ft_printf.h"
@@ -52,7 +52,7 @@ void				*ft_memset(void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memmove(void *dest, const void *src, size_t n);
-int	ft_atoi_safe(const char *str, int *error);
+int					ft_atoi_safe(const char *str, int *error);
 char				*ft_itoa(int n);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char *s, int fd);

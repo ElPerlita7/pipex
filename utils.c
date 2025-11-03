@@ -6,7 +6,7 @@
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:34:02 by abferrer          #+#    #+#             */
-/*   Updated: 2025/09/12 12:38:13 by abferrer         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:41:23 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 void	ft_error(char *msg)
 {
 	perror(msg);
-	exit(EXIT_FAILURE);
 }
 
 char	*get_path(char *cmd, char **envp)
@@ -45,7 +44,8 @@ char	*get_path(char *cmd, char **envp)
 	}
 	return (free_tab(paths), NULL);
 }
-void ejecutar(char *cmd, char **envp)
+
+void	execute(char *cmd, char **envp)
 {
 	char	**cmds;
 	char	*path;
@@ -59,14 +59,14 @@ void ejecutar(char *cmd, char **envp)
 	if (ft_strchr(cmds[0], '/'))
 		path = ft_strdup(cmds[0]);
 	else
-	    path = get_path(cmds[0], envp);
+		path = get_path(cmds[0], envp);
 	if (!path || access(path, X_OK))
 	{
 		free_tab(cmds);
 		free(path);
 		ft_putstr_fd("Command not found", 2);
 		exit(127);
-	}  
+	}
 	execve(path, cmds, envp);
 	free(path);
 	free_tab(cmds);

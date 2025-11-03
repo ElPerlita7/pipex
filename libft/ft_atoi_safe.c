@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi_safe.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_safe.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/22 19:11:05 by abferrer          #+#    #+#             */
-/*   Updated: 2025/05/21 01:50:53 by abferrer         ###   ########.fr       */
+/*   Created: 2025/11/03 16:43:56 by abferrer          #+#    #+#             */
+/*   Updated: 2025/11/03 16:44:27 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 int	ft_atoi_safe(const char *str, int *error)
 {
-	int	i;
-	int	sign;
+	int		i;
+	int		sign;
 	long	num;
 
 	i = 0;
@@ -37,28 +37,9 @@ int	ft_atoi_safe(const char *str, int *error)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		num = num * 10 + (str[i] - '0');
-		if((num * sign) > INT_MAX || (num * sign) < INT_MIN)
-		*error = 1;
-	i++;
+		if ((num * sign) > INT_MAX || (num * sign) < INT_MIN)
+			*error = 1;
+		i++;
 	}
-	return((int)(num * sign));
+	return ((int)(num * sign));
 }
-// int main(int argc, char **argv)
-// {
-// 	int	i;
-// 	int	result;
-
-// 	if (argc < 2)
-// 	{
-// 		printf("Uso: ./a.out <números>\n");
-// 		return (1);
-// 	}
-// 	i = 1;
-// 	while (i < argc)
-// 	{
-// 		result = ft_atoi_safe(argv[i]);
-// 		printf("Input: %s => Resultado: %d\n", argv[i], result);
-// 		i++;
-// 	}
-// 	return (0);
-// }
