@@ -6,7 +6,7 @@
 /*   By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/26 19:34:02 by abferrer          #+#    #+#             */
-/*   Updated: 2025/11/03 16:41:23 by abferrer         ###   ########.fr       */
+/*   Updated: 2025/11/11 20:44:31 by abferrer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	execute(char *cmd, char **envp)
 	if (!cmds || !cmds[0])
 	{
 		free_tab(cmds);
-		ft_error("commands not found");
+		(ft_error("Commands not found"), exit(127));
 	}
 	if (ft_strchr(cmds[0], '/'))
 		path = ft_strdup(cmds[0]);

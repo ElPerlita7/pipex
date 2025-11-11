@@ -6,7 +6,7 @@
 #    By: abferrer <abferrer@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/12 12:12:12 by abferrer          #+#    #+#              #
-#    Updated: 2025/11/03 17:21:13 by abferrer         ###   ########.fr        #
+#    Updated: 2025/11/11 19:09:16 by abferrer         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ = $(SRC:.c=.o)
 HEADER = pipex.h
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3
+CFLAGS = -Wall -Wextra -Werror -g3
 
 LIBFT_DIR = ./libft
 LIBFT = $(LIBFT_DIR)/libft.a
@@ -35,7 +35,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	@echo " |  __| | |  ___/ _ \\ '__| | | __/ _\` |"
 	@echo " | |____| | |  |  __/ |  | | | || (_| |"
 	@echo " |______|_|_|   \\___|_|  |_|_|\\__\\__,_|"
-	@echo "$(YELLOW)     To' Compilao Cabesa                $$$ Joseador de Codigo $$$$"
+	@echo "$(YELLOW)     To' Compilao Cabesa  ||  Joseador de Codigo"
 
 
 $(LIBFT):
